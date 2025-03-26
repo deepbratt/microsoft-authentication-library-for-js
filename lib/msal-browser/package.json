@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/AzureAD/microsoft-authentication-library-for-js.git"
   },
-  "version": "4.9.0",
+  "version": "4.9.1",
   "description": "Microsoft Authentication Library for js",
   "keywords": [
     "implicit",
@@ -63,10 +63,10 @@
     "test": "jest --forceExit",
     "test:coverage": "jest --coverage",
     "test:coverage:only": "npm run clean:coverage && npm run test:coverage",
-    "build:all": "cd ../.. && npm run build --workspace=@azure/msal-common --workspace=@azure/msal-browser",
-    "build:modules": "rollup -c --strictDeprecations --bundleConfigAsCjs",
-    "build:modules:watch": "rollup -cw --bundleConfigAsCjs",
-    "build": "npm run clean && npm run build:modules",
+    "build:all": "node init && cd ../.. && npm run build --workspace=@azure/msal-common --workspace=@azure/msal-browser",
+    "build:modules": "node init && rollup -c --strictDeprecations --bundleConfigAsCjs",
+    "build:modules:watch": "node init && rollup -cw --bundleConfigAsCjs",
+    "build": "node init && npm run clean && npm run build:modules",
     "prepack": "npm run build:all",
     "format:check": "prettier --ignore-path .gitignore --check src test",
     "format:fix": "prettier --ignore-path .gitignore --write src test",
