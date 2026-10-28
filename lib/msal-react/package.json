@@ -43,13 +43,13 @@
     ]
   },
   "scripts": {
-    "build": "rollup -c --strictDeprecations --bundleConfigAsCjs",
-    "build:modules:watch": "rollup -cw --bundleConfigAsCjs",
+    "build": "node init && rollup -c --strictDeprecations --bundleConfigAsCjs",
+    "build:modules:watch": "node init && rollup -cw --bundleConfigAsCjs",
     "test": "jest --forceExit",
     "test:coverage": "jest --coverage",
     "lint": "eslint src --ext .ts --ext .tsx",
     "lint:fix": "npm run lint -- --fix",
-    "build:all": "cd ../.. && npm run build --workspace=@azure/msal-common --workspace=@azure/msal-browser --workspace=@azure/msal-react",
+    "build:all": "node init && cd ../.. && npm run build --workspace=@azure/msal-common --workspace=@azure/msal-browser --workspace=@azure/msal-react",
     "prepack": "npm run build:all",
     "format:check": "prettier --ignore-path .gitignore --check src test",
     "format:fix": "prettier --ignore-path .gitignore --write src test",
