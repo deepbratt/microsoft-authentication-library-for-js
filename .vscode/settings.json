@@ -1,23 +1,46 @@
 {
-  "search.exclude": {
-    "**/.sst": true
-  },
-  "task.allowAutomaticTasks": true,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "debug.openDebug": "neverOpen",
-  "problems.autoReveal": true,
-  "terminal.integrated.hideOnStartup": "always",
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "terminal.integrated.inheritEnv": false,
-  "jestrunner.configPath": "jest.unit.config.cjs",
-  "compile-hero.disable-compile-files-on-did-save-code": true,
-  "tasks": {
-    "label": "lint on open",
-    "type": "shell",
-    "command": "npm run lint",
-    "runOn": "folderOpen"
-  }
+    "eslint.validate": ["javascript", "javascriptreact", "typescript"],
+    "eslint.quiet": true,
+    "files.eol": "\n",
+    "github-pr.targetBranch": "dev",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "files.associations": {
+        "**/build/*.yml": "azure-pipelines",
+        "*.json": "jsonc"
+    },
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "jest.runMode": "on-demand",
+    "jest.jestCommandLine": "npm test --",
+    "jest.virtualFolders": [
+        {
+            "name": "msal-common",
+            "rootPath": "lib/msal-common"
+        },
+        {
+            "name": "msal-browser",
+            "rootPath": "lib/msal-browser"
+        },
+        {
+            "name": "msal-node",
+            "rootPath": "lib/msal-node"
+        },
+        {
+            "name": "msal-react",
+            "rootPath": "lib/msal-react"
+        },
+        {
+            "name": "msal-node-extensions",
+            "rootPath": "extensions/msal-node-extensions"
+        }
+    ]
 }

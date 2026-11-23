@@ -286,4 +286,4 @@ junit.xml
 
 # ApiExtractor
 temp/
-config.bat
+.env
